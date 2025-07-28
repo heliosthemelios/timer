@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <script src="script.js"></script>
+  <title>Timer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ccc;
+    }
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      margin-right: 5px;
+      background-color: #f1f1f1;
+    }
+    .tab.active {
+      background-color: white;
+      font-weight: bold;
+    }
+    .tab-content {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    h2{
+        text-align: center;
+    }
+    .boite{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        height: 600px;
+        border: 3px solid black; 
+    }
+    div{
+        
+    }
+    button{
+        font-size: 30px;
+        border-radius: 5px;
+        width: 150px;
+    }
+    input{
+        width: 140px;
+        text-align: center;
+        align-items: center;
+        font-size: 40px;
+        border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tabs">
+    <div class="tab active" onclick="openTab('chrono')">Chronomètre</div>
+    <div class="tab" onclick="openTab('minuterie')">Minuterie</div>
+    <div class="tab" onclick="openTab('date')">Heure et date</div>
+  </div>
+
+  <div id="chrono" class="tab-content active">
+    <h2>Chronomètre</h2>
+    
+    <div class="boite">
+        
+        <span>00h00:00</span>
+    
+        <div>
+            <button type="button">Depart</button>
+            <button type="button">Arret</button>
+        </div>
+        
+    </div>
+  </div>
+
+  <div id="minuterie" class="tab-content">
+    <h2>Minuterie</h2>
+    <div class="boite">
+        <span>0</span>
+        <input type="text" placeholder="minute">
+    
+        <div>
+            <button type="button">Depart</button>
+        </div>
+        
+    </div>
+    
+  </div>
+
+  <div id="date" class="tab-content">
+    <h2>Heure et date</h2>
+    <div class="boite">
+        <script type="text/JavaScript">
+            var monHeure = setInterval(
+                function(){ 
+                    afficherHeureCourante()
+                }, 1000
+            );
+
+        </script>
+        <span id="heureEnCours"></span>
+    </div>
+  
+
+  <script>
+    function openTab(tabId) {
+      // Enlever la classe active de tous les onglets
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      // Enlever la classe active de tous les contenus
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      // Ajouter la classe active à l'onglet cliqué
+      event.target.classList.add('active');
+      // Afficher le contenu correspondant
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
