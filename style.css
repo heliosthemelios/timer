@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #ccc;
+}
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    margin-right: 5px;
+    background-color: #f1f1f1;
+}
+.tab.active {
+    background-color: white;
+    font-weight: bold;
+}
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+.tab-content.active {
+    display: block;
+}
+h2{
+    text-align: center;
+}
+.box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    
+    height: 600px;
+    border: 3px solid black; 
+}
+button{
+    font-size: 30px;
+    border-radius: 5px;
+    width: 150px;
+    margin-top: 10px;
+}
+input{
+    width: 140px;
+    text-align: center;
+    align-items: center;
+    font-size: 40px;
+    border-radius: 3px;
+   
+}
+.date-hours {
+    color: black;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.9);
+    
+}
+span{
+    font-size: 30px;
+    margin:50px
+}
